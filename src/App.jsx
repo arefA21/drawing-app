@@ -15,6 +15,8 @@ function App() {
     const context = canvas.getContext("2d");
     context.scale(2, 2);
     context.lineCap = "round";
+    context.strokeStyle = "yellow"
+    context.lineWidth = 10
     contextRef.current = context;
   }, []);
 
@@ -27,6 +29,7 @@ function App() {
 
   const finishPainting = () => {
     contextRef.current.closePath();
+    setIsDrawing(false)
   };
 
   const painting = ({ nativeEvent }) => {
